@@ -1,0 +1,26 @@
+local Workspace = game:GetService("Workspace")
+local Debris = game:GetService("Debris")
+local strength = 1300
+local fling = true
+Workspace.ChildAdded:Connect(function(model)
+if model.Name == "GrabParts" then
+local partInfo = model:FindFirstChild("GrabPart")
+if not partInfo then return end
+local weld = partInfo:FindFirstChild("WeldConstraint")
+if not weld or not weld.Part1 then return end
+local part = weld.Part1
+local velocity = Instance.new("BodyVelocity")
+velocity.Parent = part
+model:GetPropertyChangedSignal("Parent"):Connect(function()
+if not model.Parent then
+if fling then
+velocity.MaxForce = Vector3.new(1e9, 1e9, 1e9)
+velocity.Velocity = Workspace.CurrentCamera.CFrame.LookVector * strength
+else
+velocity.MaxForce = Vector3.zero
+end
+Debris:AddItem(velocity, 1)
+end
+end)
+end
+end)
