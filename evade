@@ -1,0 +1,15 @@
+local scripts = {
+    "https://raw.githubusercontent.com/Therealtobu/Applehub/refs/heads/main/Applehubcuatobu.lua",
+    "https://raw.githubusercontent.com/Therealtobu/Applehub/refs/heads/main/Supportmain.lua"
+}
+
+for _, url in ipairs(scripts) do
+    local success, err = pcall(function()
+        loadstring(game:HttpGet(url))()
+    end)
+
+    if not success then
+        warn("[AppleHub Loader] Failed to load:", url)
+        warn(err)
+    end
+end
