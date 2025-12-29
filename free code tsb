@@ -1,0 +1,433 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+	Name = "Script TSB  |  BaeMinh",
+	Icon = 78634177917528,
+	LoadingTitle = "Loading Hub...",
+	LoadingSubtitle = "by BaeMinh",
+	ShowText = "BaeMinhHub",
+	Theme = "Serenity",
+	ConfigurationSaving = {
+		Enabled = false
+	},
+	KeySystem = false
+})
+
+-- 🧭 Tab chứa các nút script
+local Tab = Window:CreateTab("Movesets")
+
+-- [Button1] Kars
+Tab:CreateButton({
+	Name = "Kars (Saitama)",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/OfficialAposty/RBLX-Scripts/refs/heads/main/UltimateLifeForm.lua"))()
+	end,
+})
+
+-- [Button2] Sonic.exe
+Tab:CreateButton({
+	Name = "Sonic.exe (Garou)",
+	Callback = function()
+		loadstring(game:HttpGet("https://pastefy.app/4zLt8a2P/raw"))()
+	end,
+})
+
+-- [Button3] Wally West
+Tab:CreateButton({
+	Name = "Wally West (Saitama)",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Nova2ezz/west/refs/heads/main/Protected_4638864115822087.lua.txt"))()
+	end,
+})
+
+-- [Button4] Mafioso
+Tab:CreateButton({
+	Name = "Mafioso (Saitama)",
+	Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/Lovelymoonlight/Lovelymoonlight/refs/heads/main/Baldy%20to%20mafioso'))()
+	end,
+})
+
+-- [Button5] Beerus
+Tab:CreateButton({
+	Name = "Beerus (Saitama)",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/sparksnaps/Beerus-The-Destroyer/refs/heads/main/Lua"))()
+	end,
+})
+
+-- [Button6] Madara
+Tab:CreateButton({
+	Name = "Madara (Saitama)",
+	Callback = function()
+		getgenv().Cutscene = true
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/LolnotaKid/SCRIPTSBYVEUX/refs/heads/main/BoombasticLol.lua.txt"))()
+	end,
+})
+
+-- [Button7] GoldenHead
+Tab:CreateButton({
+	Name = "GoldenHead (Saitama)",
+	Callback = function()
+		getgenv().stand = false
+		getgenv().ken = false
+		getgenv().Spawn = true
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Saitama%20to%20golden%20sigma'))()
+	end,
+})
+
+-- [Button8] Gojo
+Tab:CreateButton({
+	Name = "Gojo (Saitama)",
+	Callback = function()
+		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-The-Strongest-Battleground-Gojo-manga-Tsb-30660"))()
+	end,
+})
+
+-- [Button9] Mastery Deku
+Tab:CreateButton({
+    Name = "Mastery Deku (Garou)",
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/xKextYP5"))()
+    end,
+})
+
+--[Button10] Yuji X Sukuna
+Tab:CreateButton({
+    Name = "Yuji X Sukuna (Saitama)",
+    Callback = function()
+        getgenv().secret = false
+		getgenv().Dance = true
+		getgenv().fog = true
+		getgenv().infinitedash = false
+		getgenv().night = false
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Sigma%20v2%20vessel%20tp'))()
+    end,
+})
+
+-- [Button11] Manga Sukuna
+Tab:CreateButton({
+    Name = "Manga Sukuna (Saitama)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/NotXz3l/Roblox-Scripts/refs/heads/main/TSB/JJK/The%20Strongest%20Of%20History/Main.lua"))()
+    end,
+})
+
+-- [Button12] Void Garou
+Tab:CreateButton({
+    Name = "Void Garou (Garou)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/yes1nt/yes/refs/heads/main/Void%20Reaper%20Obfuscated.txt"))()
+    end,
+})
+
+-- [Button13] 1x1x1x1
+Tab:CreateButton({
+    Name = "1x1x1x1 (Deadly Ninja)",
+    Callback = function()
+        loadstring(game:HttpGet("https://gist.githubusercontent.com/GoldenHeads2/900e87ffc32f3c740930ccb106dd6abf/raw/358c5bf0f0a6aa25946718288dab006e3ae7e1d4/gistfile1.txt"))()
+    end,
+})
+
+-- [Button14] Naruto
+Tab:CreateButton({
+    Name = "Naruto (Saitama)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/LolnotaKid/NarutoBeatUpSasukeAss/refs/heads/main/NarutoCums"))()
+    end,
+})
+
+-- [Button15] Jun
+Tab:CreateButton({
+    Name = "Jun (Saitama)",
+    Callback = function()
+        loadstring(game:HttpGet("https://gist.githubusercontent.com/GoldenHeads2/f66279000c58a020e894a6db44914838/raw/62e53e1acacec0b38b43cd0f594292c32e09c39b/gistfile1.txt"))()
+    end,
+})
+
+-- [Button16] Gabriel
+Tab:CreateButton({
+    Name = "Gabriel (Garou)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/damir512/youinsinificants/main/insignificantFuck.txt",true))()
+    end,
+})
+
+-- [Button17] Mahito
+Tab:CreateButton({
+    Name = "Mahito (Saitama)",
+    Callback = function()
+        getgenv().Swordm1= true
+		getgenv().night = false
+		getgenv().plushie = false
+		getgenv().blackflash = true
+		getgenv().chat = false
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/Kenjihin69/Kenjihin69/refs/heads/main/Mahito%20v2%20sigma%20tp%20exploit'))() 
+    end,
+})
+
+--[Button18] GT Chara
+Tab:CreateButton({
+    Name = "GT Chara (Saitama)",
+    Callback = function()
+        loadstring(game:HttpGet("https://paste.ee/r/0yYkO"))()
+    end,
+})
+
+local Tab = Window:CreateTab("Emote")
+
+Tab:CreateButton({
+    Name = "Divine Form (Keyless)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/IdkRandomUsernameok/PublicAssets/refs/heads/main/Releases/MUI.lua"))()
+    end,
+})
+
+Tab:CreateButton({
+    Name = "Limeted Emote (Keyless)",
+    Callback = function()
+        loadstring(game:HttpGet("https://arch-http.vercel.app/files/LIMITED EMOTE HUB (75-100) BY MIYKO"))()
+    end,
+})
+
+Tab:CreateButton({
+    Name = "Limeted Emote (Key)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/NetlessScripter/GOKU/refs/heads/main/FREE%20EMOTES%20GUI"))() 
+    end,
+})
+
+-- 🧾 Tab Info (Thêm note)
+local InfoTab = Window:CreateTab("Info")
+
+local playerCount = #game.Players:GetPlayers()
+local maxPlayers = game.Players.MaxPlayers
+
+InfoTab:CreateParagraph({
+    Title = "User & Game Info",
+    Content = "Username: " .. game.Players.LocalPlayer.Name ..
+              "\nJobID: " .. tostring(game.JobId) ..
+              "\nGameID: " .. tostring(game.PlaceId) ..
+              "\nPlayers: " .. playerCount .. " / " .. maxPlayers ..
+              "\nYT: GM1nhRBL" ..
+              "\nDiscord: https://discord.gg/pq7jgm2gwg"
+})
+
+InfoTab:CreateButton({
+    Name = "Copy link Discord",
+    Callback = function()
+        local info = "https://discord.gg/pq7jgm2gwg"
+        setclipboard(info)
+        Rayfield:Notify({Title = "Copied!", Content = "Link Discord copied!", Duration = 3, Callback = function() end})
+    end,
+})
+
+
+InfoTab:CreateButton({
+    Name = "Copy link YT",
+    Callback = function()
+        local info = "https://www.youtube.com/@NgGMinh2807"
+        setclipboard(info)
+        Rayfield:Notify({Title = "Copied!", Content = "Link YT copied!", Duration = 3, Callback = function() end})
+    end,
+})
+
+InfoTab:CreateButton({
+    Name = "Copy JobID",
+    Callback = function()
+        if setclipboard then
+            setclipboard(game.JobId)
+            Rayfield:Notify({
+                Title = "✅ JobID đã được sao chép!",
+                Content = "JobID của server hiện tại đã được copy vào clipboard.",
+                Duration = 3,
+            })
+        else
+            Rayfield:Notify({
+                Title = "⚠️ Không thể sao chép!",
+                Content = "Executor của bạn không hỗ trợ setclipboard.",
+                Duration = 3,
+            })
+            print("JobID:", game.JobId)
+        end
+    end,
+})
+
+local TeleportService = game:GetService("TeleportService")
+
+local jobBox = InfoTab:CreateInput({
+    Name = "Join JobID",
+    PlaceholderText = "Enter JobID to tp",
+    RemoveTextAfterFocusLost = false,
+    Callback = function(Value)
+        getgenv().targetJobID = Value
+    end,
+})
+
+InfoTab:CreateButton({
+    Name = "Join Server",
+    Callback = function()
+        if getgenv().targetJobID and getgenv().targetJobID ~= "" then
+            Rayfield:Notify({
+                Title = "Đang teleport...",
+                Content = "Đang tham gia server có JobID: " .. getgenv().targetJobID,
+                Duration = 3,
+            })
+            TeleportService:TeleportToPlaceInstance(game.PlaceId, getgenv().targetJobID, game.Players.LocalPlayer)
+        else
+            Rayfield:Notify({
+                Title = "Lỗi",
+                Content = "Vui lòng nhập JobID trước khi join!",
+                Duration = 3,
+            })
+        end
+    end,
+})
+
+local MainTab = Window:CreateTab("Main")
+
+MainTab:CreateButton({
+    Name = "AutoBlock & CamLock",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/CombatGUI/refs/heads/main/TSBCombatGUI"))()
+    end,
+})
+
+MainTab:CreateButton({
+    Name = "Trash-Can",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/yes1nt/yes/refs/heads/main/Trashcan%20Man",true))()
+    end,
+})
+
+MainTab:CreateButton({
+    Name = "Saitama Hard Combo",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/SaitamaCombo/refs/heads/main/Code.txt"))()
+    end,
+})
+
+MainTab:CreateButton({
+    Name = "Hard Combo (Saitama & Garou)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/CombosRemake/refs/heads/main/Script"))()
+    end,
+})
+
+MainTab:CreateButton({
+    Name = "5 Character auto combo",
+    Callback = function()
+        loadstring(game:HttpGet("https://pastefy.app/UY1oh6PG/raw"))()
+    end,
+})
+
+MainTab:CreateButton({
+    Name = "Ultra Instinct Dogging",
+    Callback = function()
+        loadstring(game:HttpGet("https://pastefy.app/JYn4De0C/raw"))()
+    end,
+})
+
+MainTab:CreateButton({
+    Name = "AIM Lock Silent",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/MerebennieOfficial/ExoticJn/refs/heads/main/AIMLOCK"))()
+    end,
+})
+
+local TargetName = ""
+
+MainTab:CreateInput({
+    Name = "Target Username",
+    PlaceholderText = "Enter Username...",
+    RemoveTextAfterFocusLost = false,
+    Callback = function(text)
+        TargetName = text
+    end
+})
+
+MainTab:CreateButton({
+    Name = "Run Stand Script",
+    Callback = function()
+        if TargetName == "" then
+            Rayfield:Notify({
+                Title = "Failed ❌",
+                Content = "You not enter username",
+                Duration = 4
+            })
+            return
+        end
+
+        getgenv().TargetUsername = TargetName
+
+        Rayfield:Notify({
+            Title = "Running...",
+            Content = "Set TargetUsername = " .. TargetName,
+            Duration = 4
+        })
+
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Dragonfly5101/Minosr/refs/heads/main/Stand"))()
+    end
+})
+
+MainTab:CreateButton({
+    Name = "Invisible",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Dragonfly5101/Minosr/refs/heads/main/INVISSSS.jjs"))()
+    end,
+})
+
+local TechTab = Window:CreateTab("Tech")
+
+TechTab:CreateButton({
+    Name = "Auto Kyoto",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/KyotoTechRework/refs/heads/main/Protected_9378660372508532.lua"))()
+    end,
+})
+
+TechTab:CreateButton({
+    Name = "Auto Oreo",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/OreoTech/refs/heads/main/Protected_6856895483929371.lua"))()
+    end,
+})
+
+TechTab:CreateButton({
+    Name = "Auto LethalDash",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/InstantLethal/refs/heads/main/Protected_5983112998592296.lua"))()
+    end,
+})
+
+TechTab:CreateButton({
+    Name = "Instant-twisted",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/InstantTwistedRevamp/refs/heads/main/Protected_7455521176683315.lua"))()
+    end,
+})
+
+TechTab:CreateButton({
+    Name = "Auto Kiba",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/MerebennieOfficial/ExoticJn/refs/heads/main/Kibav4"))()
+    end,
+})
+
+TechTab:CreateButton({
+    Name = "Surfing Garou",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/GarouSurfingTech/refs/heads/main/Protected_2674673126232747.lua"))()
+    end,
+})
+
+TechTab:CreateButton({
+    Name = "M1 Reset(Emote Dash)",
+    Callback = function()
+        getgenv().EmoteDashButton = true
+		getgenv().M1ResetMethod = 1
+
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/M1Reset/refs/heads/main/Protected_7911467234955743.lua"))()
+
+    end,
+})
