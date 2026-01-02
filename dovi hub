@@ -1,0 +1,2 @@
+key : qb7HLcqv2o5rdNzpeFbY
+loadstring(game:HttpGet("https://raw.githubusercontent.com/needanewphone32-eng/tsbfiles/refs/heads/main/Main.lua"))()
