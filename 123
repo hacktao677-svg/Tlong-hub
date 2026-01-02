@@ -1,0 +1,93 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "All-In-One Hub",
+   LoadingTitle = "Đang khởi tạo...",
+   LoadingSubtitle = "by MIXI",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = "GeminiHubConfig",
+      FileName = "MainConfig"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "",
+      RememberJoins = true
+   },
+   KeySystem = false,
+})
+
+--- [ TABS ] ---
+-- Gộp tất cả vào 1 Tab chính
+local MainTab = Window:CreateTab("Main Menu", 4483362458)
+
+--- [ PHẦN TECH & COMBAT ] ---
+MainTab:CreateSection("Tech & Combat")
+
+MainTab:CreateButton({
+   Name = "Emote Dash",
+   Callback = function()
+       getgenv().EmoteDashButton = true
+       getgenv().M1ResetMethod = 1
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/M1Reset/refs/heads/main/Protected_7911467234955743.lua"))()
+   end,
+})
+
+MainTab:CreateButton({
+   Name = "Surfing Garou",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/GarouSurfingTech/refs/heads/main/Protected_2674673126232747.lua"))()
+   end,
+})
+
+MainTab:CreateButton({
+   Name = "Instant-twisted",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/InstantTwistedRevamp/refs/heads/main/Protected_7455521176683315.lua"))()
+   end,
+})
+
+MainTab:CreateButton({
+   Name = "Auto Lethal Dash",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/InstantLethal/refs/heads/main/Protected_5983112998592296.lua"))()
+   end,
+})
+
+MainTab:CreateButton({
+   Name = "Oreo Tech",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/OreoTech/refs/heads/main/Protected_6856895483929371.lua"))()
+   end,
+})
+
+MainTab:CreateButton({
+   Name = "Kiba",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/MinhNhatHUB/MinhNhat/refs/heads/main/Lethal%20Kiba.lua"))()
+   end,
+})
+
+--- [ PHẦN FARM ] ---
+MainTab:CreateSection("Auto Farming")
+
+MainTab:CreateButton({
+   Name = "Farm V1",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/minhnhatdepzai8-cloud/FARM-KILL/refs/heads/main/TSB"))()
+   end,
+})
+
+MainTab:CreateButton({
+   Name = "Farm V2",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/MinhNhatHUB/MinhNhat/refs/heads/main/Farm%20Kill%20V3.lua"))()
+   end,
+})
+
+Rayfield:Notify({
+   Title = "Hoàn tất!",
+   Content = "Đã gộp tất cả script vào 1 Tab",
+   Duration = 3,
+   Image = 4483362458,
+})
