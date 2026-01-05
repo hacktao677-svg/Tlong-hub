@@ -1,8 +1,8 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "All-In-One Hub",
-   LoadingTitle = "Đang khởi tạo...",
+   Name = "All-In-One Hub (FULL)",
+   LoadingTitle = "Đang khởi tạo tất cả script...",
    LoadingSubtitle = "by MIXI",
    ConfigurationSaving = {
       Enabled = true,
@@ -18,11 +18,58 @@ local Window = Rayfield:CreateWindow({
 })
 
 --- [ TABS ] ---
--- Gộp tất cả vào 1 Tab chính
-local MainTab = Window:CreateTab("Main Menu", 4483362458)
+local MainTab = Window:CreateTab("Combat & Tech", 4483362458)
+local FarmTab = Window:CreateTab("Auto Farm", 4483362458)
+local ExtraTab = Window:CreateTab("Extra & Emote", 4483362458)
+local FixLagTab = Window:CreateTab("Fix Lag", 4483362458)
 
---- [ PHẦN TECH & COMBAT ] ---
-MainTab:CreateSection("Tech & Combat")
+--- [ TAB COMBAT & TECH ] ---
+MainTab:CreateSection("Special Tech")
+
+MainTab:CreateButton({
+   Name = "Auto Lethal Dash",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/InstantLethal/refs/heads/main/Protected_5983112998592296.lua"))()
+   end,
+})
+
+MainTab:CreateButton({
+   Name = "Oreo Tech",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/OreoTech/refs/heads/main/Protected_6856895483929371.lua"))()
+   end,
+})
+
+MainTab:CreateButton({
+   Name = "Aimlock (EBHUB - Auto Key 'idk')",
+   Callback = function()
+       _G.Key = "idk"
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/r3k33551-bot/Acortador-de-scripts/refs/heads/main/EBHUBR%20V7.txt"))()
+   end,
+})
+
+MainTab:CreateButton({
+   Name = "Supa Tech V2",
+   Callback = function()
+       loadstring(game:HttpGet("https://rawscripts.net/raw/The-Strongest-Battlegrounds-Supa-tech-v2-77454"))()
+   end,
+})
+
+MainTab:CreateButton({
+   Name = "Kyoto Tech Rework",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/KyotoTechRework/refs/heads/main/Protected_9378660372508532.lua"))()
+   end,
+})
+
+MainTab:CreateButton({
+   Name = "Kiba",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/MinhNhatHUB/MinhNhat/refs/heads/main/Lethal%20Kiba.lua"))()
+   end,
+})
+
+MainTab:CreateSection("Basic Combat")
 
 MainTab:CreateButton({
    Name = "Emote Dash",
@@ -41,53 +88,59 @@ MainTab:CreateButton({
 })
 
 MainTab:CreateButton({
-   Name = "Instant-twisted",
+   Name = "Instant Twisted",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/InstantTwistedRevamp/refs/heads/main/Protected_7455521176683315.lua"))()
    end,
 })
 
-MainTab:CreateButton({
-   Name = "Auto Lethal Dash",
-   Callback = function()
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/InstantLethal/refs/heads/main/Protected_5983112998592296.lua"))()
-   end,
-})
+--- [ TAB AUTO FARM ] ---
+FarmTab:CreateSection("Farming Bots")
 
-MainTab:CreateButton({
-   Name = "Oreo Tech",
-   Callback = function()
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/Cyborg883/OreoTech/refs/heads/main/Protected_6856895483929371.lua"))()
-   end,
-})
-
-MainTab:CreateButton({
-   Name = "Kiba",
-   Callback = function()
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/MinhNhatHUB/MinhNhat/refs/heads/main/Lethal%20Kiba.lua"))()
-   end,
-})
-
---- [ PHẦN FARM ] ---
-MainTab:CreateSection("Auto Farming")
-
-MainTab:CreateButton({
-   Name = "Farm V1",
+FarmTab:CreateButton({
+   Name = "Farm Kill V1 (TSB)",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/minhnhatdepzai8-cloud/FARM-KILL/refs/heads/main/TSB"))()
    end,
 })
 
-MainTab:CreateButton({
-   Name = "Farm V2",
+FarmTab:CreateButton({
+   Name = "Farm Kill V2 (V3.lua)",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/MinhNhatHUB/MinhNhat/refs/heads/main/Farm%20Kill%20V3.lua"))()
    end,
 })
 
+FarmTab:CreateButton({
+   Name = "Trashcan Man",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/yes1nt/yes/refs/heads/main/Trashcan%20Man", true))()
+   end,
+})
+
+--- [ TAB EXTRA & EMOTE ] ---
+ExtraTab:CreateSection("Animations")
+
+ExtraTab:CreateButton({
+   Name = "Emote Hub (25-100)",
+   Callback = function()
+       loadstring(game:HttpGet('https://raw.githubusercontent.com/MIYKO0EB/ScriptsIDK/refs/heads/main/EMOTE%20HUB(25-100).txt'))()
+   end,
+})
+
+--- [ TAB FIX LAG ] ---
+FixLagTab:CreateSection("Optimization")
+
+FixLagTab:CreateButton({
+   Name = "Fix Lag V1",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/duchao28052025-collab/Fixlag/refs/heads/main/Fixlag-V1"))()
+   end,
+})
+
 Rayfield:Notify({
-   Title = "Hoàn tất!",
-   Content = "Đã gộp tất cả script vào 1 Tab",
-   Duration = 3,
+   Title = "Thành công!",
+   Content = "Đã gộp ĐỦ 100% script cho mày rồi nhé!",
+   Duration = 5,
    Image = 4483362458,
 })
