@@ -1,0 +1,116 @@
+-- Cấu hình ưu tiên
+local TARGET_TEAMS = {"Astro", "Cameraman"}
+local MY_TEAM = "Toilet"
+
+-- Biến điều khiển
+local AutoKillEnabled = false
+local lp = game:GetService("Players").LocalPlayer
+
+-- TẠO GIAO DIỆN (GUI)
+local ScreenGui = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local ToggleBtn = Instance.new("TextButton")
+local KillScriptBtn = Instance.new("TextButton")
+local Title = Instance.new("TextLabel")
+
+ScreenGui.Name = "ToiletHunter_Hub"
+ScreenGui.Parent = game:GetService("CoreGui")
+ScreenGui.ResetOnSpawn = false
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = ScreenGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(40, 0, 0) -- Màu đỏ tối cho ngầu
+MainFrame.Position = UDim2.new(0.1, 0, 0.4, 0)
+MainFrame.Size = UDim2.new(0, 180, 0, 160)
+MainFrame.Active = true
+MainFrame.Draggable = true
+
+Title.Parent = MainFrame
+Title.Size = UDim2.new(1, 0, 0, 30)
+Title.Text = "Toilet Hunter (Low HP)"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundColor3 = Color3.fromRGB(80, 0, 0)
+
+-- Nút Bật/Tắt
+ToggleBtn.Parent = MainFrame
+ToggleBtn.Position = UDim2.new(0.1, 0, 0.3, 0)
+ToggleBtn.Size = UDim2.new(0.8, 0, 0, 40)
+ToggleBtn.BackgroundColor3 = Color3.fromRGB(200, 50, 50)
+ToggleBtn.Text = "Săn Astro/Cam: OFF"
+ToggleBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+-- Nút Hủy
+KillScriptBtn.Parent = MainFrame
+KillScriptBtn.Position = UDim2.new(0.1, 0, 0.65, 0)
+KillScriptBtn.Size = UDim2.new(0.8, 0, 0, 35)
+KillScriptBtn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+KillScriptBtn.Text = "Tắt Script"
+KillScriptBtn.TextColor3 = Color3.fromRGB(200, 200, 200)
+
+-- HÀM TÌM ĐỨA YẾU MÁU NHẤT
+function getWeakestTarget()
+    local target = nil
+    local minHealth = math.huge
+    
+    for _, v in pairs(game:GetService("Players"):GetPlayers()) do
+        if v ~= lp and v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health > 0 then
+            local teamName = v.Team and v.Team.Name or ""
+            
+            -- Chỉ chọn Astro hoặc Cameraman
+            local isTargetTeam = false
+            for _, name in pairs(TARGET_TEAMS) do
+                if teamName == name then isTargetTeam = true break end
+            end
+            
+            if isTargetTeam then
+                -- So sánh máu để tìm đứa yếu nhất
+                if v.Character.Humanoid.Health < minHealth then
+                    minHealth = v.Character.Humanoid.Health
+                    target = v
+                end
+            end
+        end
+    end
+    return target
+end
+
+-- VÒNG LẶP CHÍNH
+spawn(function()
+    while true do
+        if AutoKillEnabled then
+            pcall(function()
+                local target = getWeakestTarget()
+                if target and target.Character and target.Character:FindFirstChild("HumanoidRootPart") then
+                    -- Áp sát
+                    lp.Character.HumanoidRootPart.CFrame = target.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 6)
+                    
+                    -- Nhìn thẳng mặt
+                    lp.Character.HumanoidRootPart.CFrame = CFrame.lookAt(lp.Character.HumanoidRootPart.Position, target.Character.HumanoidRootPart.Position)
+                    
+                    -- Chém
+                    local VU = game:GetService('VirtualUser')
+                    VU:CaptureController()
+                    VU:ClickButton1(Vector2.new(0, 0))
+                end
+            end)
+        end
+        task.wait(0.05) -- Quét cực nhanh để cướp kill
+    end
+end)
+
+-- SỰ KIỆN
+ToggleBtn.MouseButton1Click:Connect(function()
+    AutoKillEnabled = not AutoKillEnabled
+    if AutoKillEnabled then
+        ToggleBtn.Text = "Đang Săn: ON"
+        ToggleBtn.BackgroundColor3 = Color3.fromRGB(0, 150, 0)
+    else
+        ToggleBtn.Text = "Săn Astro/Cam: OFF"
+        ToggleBtn.BackgroundColor3 = Color3.fromRGB(200, 50, 50)
+    end
+end)
+
+KillScriptBtn.MouseButton1Click:Connect(function()
+    AutoKillEnabled = false
+    ScreenGui:Destroy()
+end)
